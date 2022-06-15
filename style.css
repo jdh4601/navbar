@@ -94,15 +94,17 @@ header {
 }
 
 .main_section section {
+  display: flex;
   text-align: center;
   min-height: 90vh;
+  transition: 2s all ease;
 }
 
-.main_section section > button {
+.main_section section .text_box button {
   cursor: pointer;
   margin-top: 40px;
-  width: 200px;
-  height: 40px;
+  width: 220px;
+  line-height: 40px;
   font-size: 20px;
   border-radius: 30px;
   color: rgb(243, 49, 49);
@@ -110,13 +112,37 @@ header {
   border-color: rgb(243, 49, 49);
 }
 
-.main_section section > button:hover {
+.main_section section .text_box button:hover {
   background-color: rgb(243, 49, 49);
   color: var(--white-color);
 }
 
+.main_section section .text_box {
+  background-color: #009b9b;
+  color: white;
+  padding: 20px;
+  margin: auto auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 700px;
+  height: 330px;
+  border-radius: 10px;
+}
+
+.main_section section .text_box h2 {
+  margin-bottom: 10px;
+  font-size: 50px;
+}
+
+.main_section section .text_box p {
+  font-size: 25px;
+}
+
 .main_section .home {
-  background:linear-gradient(to right top, #d9a7c7, #fffcdc);
+  background:linear-gradient(to right top, #43C6AC, #F8FFAE);
 }
 
 .main_section .about {
@@ -128,7 +154,7 @@ header {
 }
 
 .main_section .qna {
-  background:linear-gradient(to right top, #f79d00, #64f38c);
+  background:linear-gradient(to right top, #B2FEFA, #0ED2F7);
 }
 
 .main_section .contact {
@@ -164,7 +190,7 @@ header {
     display: block;
   }
   .container .nav_menu {
-    /* display: none; */
+    display: none;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -176,7 +202,7 @@ header {
     margin: 0px!important;
   }
   .container .nav_icons {
-    /* display: none; */
+    display: none;
     text-align: center;
     align-items: center;
     font-size: 25px;
@@ -186,7 +212,25 @@ header {
   }
   .nav_icons .active,
   .nav_menu .active {
-    display: flex;
+    display: block!important;
   }
+}
 
+@media screen and (max-width: 480px) {
+  .main_section section .text_box {
+    width: 300px;
+    height: 300px;
+  }
+  .main_section section .text_box h2 {
+    margin-bottom: 10px;
+    font-size: 30px;
+  }
+  .main_section section .text_box p {
+    font-size: 15px;
+  }
+  .main_section section .text_box button {
+    width: 150px;
+    line-height: 20px;
+    font-size: 15px;
+  }
 }
