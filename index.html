@@ -12,7 +12,7 @@
   <!-- header -->
   <header>
     <nav class="container">
-      <h1 id="title">HomePage</h1>
+      <h1 id="title" onclick="reloadBtn()" >HomePage</h1>
       <ul class="nav_menu">
         <li data-page="home">Home</li>
         <li data-page="about">About</li>
@@ -68,10 +68,19 @@
       </div>
     </section>
   </main>
+  <!-- article -->
+  <article class="page hidden">
+    <h1 class="title">Next-page</h1>
+    <i class="fa-solid fa-angle-left"></i>
+    <div class="content">
+      <img src="./london.png" alt="london">
+    </div>
+  </article>
   <!-- footer -->
   <footer class="footer">
     <p>jdh9490@gmail.com</p>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="./script.js"></script>
 </body>
 </html>

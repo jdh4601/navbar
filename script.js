@@ -78,3 +78,31 @@ function navCheck(entries) {
 sections.forEach(section => {
   observer.observe(section);
 });
+// 다음 페이지 보여줌
+const firstPage = document.querySelector('.main_section');
+const btn = document.querySelector('.text_box button');
+const nextPage = document.querySelector('.page');
+// function moveNextPage() {
+//   $('.main_section').hide();
+//   $('.page').show();
+// }
+function moveNextPage() {
+  firstPage.classList.add('hidden');
+  nextPage.classList.remove('hidden');
+}
+
+btn.addEventListener('click', moveNextPage);
+
+// 이전으로 돌아가기
+
+function before() {
+
+}
+
+function reloadBtn() {
+  if (confirm("hello") == true) { 
+    window.location.reload();
+  } else {
+    return;
+  }
+}
