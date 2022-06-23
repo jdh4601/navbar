@@ -1,7 +1,7 @@
-const toggleBtn = document.querySelector('.fa-bars');
-const menu = document.querySelector('.nav_menu');
+const toggleBtn = document.querySelector('.toggle-btn');
+const menu = document.querySelector('.container .nav_menu');
 const lists = document.querySelectorAll('.nav_menu li');
-const icons = document.querySelector('.nav_icons');
+const icons = document.querySelector('.container .nav_icons');
 const sections = document.querySelectorAll('section');
 const bubble = document.querySelector('.bubble');
 
@@ -30,7 +30,7 @@ qna.addEventListener('click', () => {
 contact.addEventListener('click', () => {
   window.scrollTo(0, 2840);
 });
-
+// scroll 좌표 얻기
 window.addEventListener("scroll", () => {
   let scrollY = this.scrollY;
   let scrollX = this.scrollX;
@@ -43,8 +43,8 @@ window.addEventListener('scroll', () => {
 
 // 메뉴 보여주기
 function showMenu() {
-  menu.classList.toggle('.active');
-  icons.classList.toggle('.active');
+  menu.classList.toggle('active');
+  icons.classList.toggle('active');
 }
 toggleBtn.addEventListener('click', showMenu);
 
@@ -80,29 +80,21 @@ sections.forEach(section => {
 });
 // 다음 페이지 보여줌
 const firstPage = document.querySelector('.main_section');
-const btn = document.querySelector('.text_box button');
-const nextPage = document.querySelector('.page');
-// function moveNextPage() {
-//   $('.main_section').hide();
-//   $('.page').show();
-// }
+const moreBtn = document.querySelector('.text_box button');
+const nextPage = document.querySelector('.nextPage');
+
 function moveNextPage() {
   firstPage.classList.add('hidden');
   nextPage.classList.remove('hidden');
 }
 
-btn.addEventListener('click', moveNextPage);
+moreBtn.addEventListener('click', moveNextPage);
 
-// 이전으로 돌아가기
+// 뒤로가기 (홈으로)
+const backBtn = document.querySelector('.nextPage fa-solid');
 
-function before() {
-
+function moveBefore() {
+  history.go(-1);
 }
 
-function reloadBtn() {
-  if (confirm("hello") == true) { 
-    window.location.reload();
-  } else {
-    return;
-  }
-}
+backBtn.addEventListener('click', moveBefore);
